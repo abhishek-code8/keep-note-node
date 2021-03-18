@@ -94,13 +94,13 @@ describe('Testing to register a user', function()
       should.not.exist(err);
       should.exist(res.body, 'Response body should not be null or undefined');
       res.body.userInfo.should.be.equal('admin@gmail.com', 'Response body should have a key as userInfo which will hold username value');
-      findUser({userName: res.body.userInfo}, (error, user)=> {
+      findUser({username: res.body.userInfo}, (error, user)=> {
         if(err) {
           should.not.exist(error);
           done();
         } else {
           should.exist(user, 'Returning null as a response, should return registered user');
-          user.userName.should.be.equal('admin@gmail.com');
+          user.username.should.be.equal('admin@gmail.com');
           done();
         }
       });
