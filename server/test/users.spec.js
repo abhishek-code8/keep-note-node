@@ -135,7 +135,7 @@ describe('Testing to login user', function()
     .send(user)
     .end(function(err, res) {
       should.not.exist(err);
-      res.body.user.userName.should.be.equal('admin@gmail.com', 'Response body should have a key as user which will hold userName as a key and it will hold username value');
+      res.body.user.username.should.be.equal('admin@gmail.com', 'Response body should have a key as user which will hold userName as a key and it will hold username value');
       done();
     });
   });
